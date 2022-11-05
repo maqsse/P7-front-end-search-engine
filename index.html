@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Bootstrap4/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/icons/logoIcon.svg" alt="icone Les petits plats">
+            <h1>Les petits plats</h1>
+        </div>
+    </header>
+    <main>
+
+        <div class="search input-group">
+            <input type="text" class="form-control" placeholder="Rechercher une recette" oninput="searchInput(event)">
+            <div class="input-group-append">
+                <button class="btn" type="button">
+                    <img src="assets/icons/search.svg" alt="Icone recherche">
+                </button>
+            </div>
+        </div>
+
+        <div class="filters">
+            <div class="filtersSelected"></div>
+
+            <div class="filtersDropdowns">
+                <div class="dropdown input-group ingredient" onmousedown="dropdownOpen(event.currentTarget)" data-type="ingredient">
+                    <input type="text" class="form-control" placeholder="Ingredients" oninput="getDropdownsLists()">
+                    <div class="input-group-append">
+                        <button class="btn" type="button" onclick="dropdownToggle(event.currentTarget.parentNode.parentNode)">
+                            <img src="assets/icons/arrow.svg" alt="déplier ingrédients">
+                        </button>
+                    </div>
+                    <div class="dropdownOptions ingredient"></div>
+                </div>
+
+                <div class="dropdown input-group appliance" onmousedown="dropdownOpen(event.currentTarget)" data-type="appliance">
+                    <input type="text" class="form-control" placeholder="Appareil" oninput="getDropdownsLists()">
+                    <div class="input-group-append">
+                        <button class="btn" type="button" onclick="dropdownToggle(event.currentTarget.parentNode.parentNode)">
+                            <img src="assets/icons/arrow.svg" alt="déplier appareils">
+                        </button>
+                    </div>
+                    <div class="dropdownOptions appliance"></div>
+                </div>
+
+                <div class="dropdown input-group utensil" onmousedown="dropdownOpen(event.currentTarget)" data-type="utensil">
+                    <input type="text" class="form-control" placeholder="Ustensiles" oninput="getDropdownsLists()">
+                    <div class="input-group-append">
+                        <button class="btn" type="button" onclick="dropdownToggle(event.currentTarget.parentNode.parentNode)">
+                            <img src="assets/icons/arrow.svg" alt="déplier ustensiles">
+                        </button>
+                    </div>
+                    <div class="dropdownOptions utensil"></div>
+                </div>
+            </div>
+        </div>
+
+        <section class="grid"></section>
+
+    </main>
+    
+    <script src="data/recipes.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
+
+
