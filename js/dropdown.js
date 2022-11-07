@@ -1,5 +1,3 @@
-document.querySelector("body").ondragstart = () => {return false;}; // Empêche les images d'être déplacées
-
 function dropdownOpen(dropdown) {
     if ( !dropdown.classList.contains("dropdownOpen") ) {
        dropdownClose();
